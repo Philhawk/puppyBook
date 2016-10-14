@@ -1,12 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default class AllPuppies extends React.Component {
-  constructor(props){
-    super(props)
-  }
-  componentDidMount() {
-    this.props.loadAllPuppies();
-  }
 
   render () {
 
@@ -21,7 +16,9 @@ export default class AllPuppies extends React.Component {
             {
               allPuppies && allPuppies.map(puppy => (
                 <ul className="list-unstyled" key={puppy.id}>
-                <li><a href="#">{puppy.name}</a></li>
+                  <li>
+                    <Link to={`puppies/${puppy.id}`}>{puppy.name}</Link>
+                  </li>
                 </ul>
               ))
             }

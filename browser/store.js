@@ -1,12 +1,12 @@
 'use strict'
 
 import { createStore, applyMiddleware } from 'redux';
-import allPuppiesReducer from './reducer.js';
+import rootReducer from './reducer.js';
 import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 
 export default createStore(
-    allPuppiesReducer,
+    rootReducer,
     applyMiddleware(
       createLogger(),
       thunkMiddleware

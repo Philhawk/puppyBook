@@ -1,12 +1,25 @@
 'use strict'
 
-import {RECEIVE_PUPPIES} from './action-creators';
+import { combineReducers } from 'redux';
+import { RECEIVE_PUPPIES, SELECT_PUPPY } from './action-creators';
 
-const allPuppiesReducer = function(state = {allPuppies: []}, action) {
+function allPuppiesReducer (state = [], action) {
   switch (action.type) {
-    case RECEIVE_PUPPIES: return Object.assign({}, state, {allPuppies: action.puppies});
-    default: return state
+    case RECEIVE_PUPPIES: return action.receivePuppies;
+    default: return state;
   }
 }
 
-export default allPuppiesReducer;
+function selectedPuppyReducer (state = {}, action) {
+  switch (action.type) {
+    case SELECT_PUPPY: return action.selectPuppy;
+    default: return state;
+  }
+}
+
+const rootReducer = combineReducers({
+  allPuppies: allPuppiesReducer,
+  selectedPuppy: selectedPuppyReducer
+});
+
+export default rootReducer;

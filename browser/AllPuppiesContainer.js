@@ -3,7 +3,6 @@
 import { connect } from 'react-redux';
 import AllPuppies from './AllPuppies';
 import { loadPuppies } from './action-creators';
-const hardCodedPuppies = [{ id: 1, name: 'Cody' }, { id: 2, name: 'Ben' }, { id: 3, name: 'Bubba' }];
 
 const mapStateToProps = function(state){
   return{
@@ -11,16 +10,7 @@ const mapStateToProps = function(state){
   }
 }
 
-const mapDispatchToProps = function(dispatch){
-  return {
-      loadAllPuppies: function(){
-        dispatch(loadPuppies())
-      }
-    }
-  }
-
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(AllPuppies);

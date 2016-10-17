@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 export default class AllPuppies extends React.Component {
 
   render() {
-
     const { allPuppies } = this.props;
 
     return (

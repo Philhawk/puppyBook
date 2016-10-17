@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 export default class SinglePuppy extends Component {
 
-  render () {
-
-    let { singlePuppy } = this.props;
+  render() {
+    const { singlePuppy } = this.props;
 
     return (
       <div>
@@ -13,6 +12,6 @@ export default class SinglePuppy extends Component {
           <img src={singlePuppy.image} />
         </div>
       </div>
-    )
+    );
   }
 }

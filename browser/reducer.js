@@ -1,16 +1,16 @@
-'use strict'
+
 
 import { combineReducers } from 'redux';
 import { RECEIVE_PUPPIES, SELECT_PUPPY } from './action-creators';
 
-function allPuppiesReducer (state = [], action) {
+function allPuppiesReducer(state = [], action) {
   switch (action.type) {
     case RECEIVE_PUPPIES: return action.receivePuppies;
     default: return state;
   }
 }
 
-function selectedPuppyReducer (state = {}, action) {
+function selectedPuppyReducer(state = {}, action) {
   switch (action.type) {
     case SELECT_PUPPY: return action.selectPuppy;
     default: return state;
@@ -19,7 +19,7 @@ function selectedPuppyReducer (state = {}, action) {
 
 const rootReducer = combineReducers({
   allPuppies: allPuppiesReducer,
-  selectedPuppy: selectedPuppyReducer
+  selectedPuppy: selectedPuppyReducer,
 });
 
 export default rootReducer;

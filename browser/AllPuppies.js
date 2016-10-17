@@ -3,11 +3,9 @@ import { Link } from 'react-router';
 
 export default class AllPuppies extends React.Component {
 
-  render () {
+  render() {
 
-    console.log('These are the props being passed down: ', this.props)
-
-    let { allPuppies} = this.props;
+    const { allPuppies } = this.props;
 
     return (
       <div className="container flexbox-container">
@@ -25,6 +23,6 @@ export default class AllPuppies extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
